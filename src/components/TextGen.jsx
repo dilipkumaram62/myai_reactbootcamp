@@ -20,7 +20,7 @@ async function GenText(promptprovided) {
 // taking input 
 const TextGen = () => {
     const[prompt,setprompt] = useState("");
-    const[response,setResponse] = useState("")
+    const[response,setResponse] = useState("");
     function handleChange(e){
         setprompt(e.target.value);
     }
@@ -38,11 +38,13 @@ const TextGen = () => {
         </h1>
         <div className='my-10 mx-auto max-w-screen-lg'>
         <label className='block my-4'htmlFor="Enter your prompt">Enter your prompt</label>
-        <textarea rows={2} cols={150} type='text' onChange={(e)=>handleChange(e)}
-        className='border rounded border-black'placeholder='Hi! '></textarea>
-        <button className='block border rounded-lg border-black bg-blue-900 text-white
-        px-2 my-1 mx-100'  onClick={handleSubmit}>Generate{""}</button>
+        <textarea  name="promptText" id="promptText" cols="30" rows="5" onChange={(e)=>handleChange(e)}  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+         placeholder='Hi!'></textarea>
+        <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-1
+         focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 my-4" onClick={handleSubmit}>Generate{""}</button>
         </div>
+        <section class="max-w-4xl mx-auto p-4"><h4 class="text-xl font-bold py-2"></h4><article class="text-lg"><p class="text-lg py-2"></p></article></section>
+        
         <div className='my-4 max-w-screen-xl'>
             <p>{response}</p>
 
@@ -51,4 +53,4 @@ const TextGen = () => {
   )
 }
 
-export default TextGen
+export default TextGen;
